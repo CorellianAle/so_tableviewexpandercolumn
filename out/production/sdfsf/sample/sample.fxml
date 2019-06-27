@@ -1,0 +1,43 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<StackPane fx:controller="sample.Controller"
+           xmlns:fx="http://javafx.com/fxml" alignment="center">
+
+    <GridPane fx:id="gridPane" hgap="2" vgap="2">
+        <padding>
+            <Insets topRightBottomLeft="5"/>
+        </padding>
+
+        <columnConstraints>
+            <ColumnConstraints percentWidth="100"/>
+        </columnConstraints>
+
+        <rowConstraints>
+            <RowConstraints vgrow="ALWAYS"/>
+            <RowConstraints/>
+        </rowConstraints>
+
+        <TableView GridPane.columnIndex="0" GridPane.rowIndex="0" fx:id="tableView"/>
+
+        <HBox GridPane.columnIndex="0" GridPane.rowIndex="1" spacing="2" alignment="CENTER_LEFT">
+            <Button fx:id="button_updateEmployees" minWidth="150" text="Update" onAction="#onAction_button_updateEmployees"/>
+            <HBox minWidth="25"/>
+            <Button fx:id="button_saveEmployee" minWidth="150" text="Save" onAction="#onAction_button_saveEmployee"/>
+            <Button fx:id="button_saveAllEmployees" minWidth="150" text="Save all" onAction="#onAction_button_saveAllEmployees"/>
+            <HBox minWidth="25"/>
+            <Button fx:id="button_addEmployee" minWidth="150" text="Add" onAction="#onAction_button_addEmployee"/>
+            <Button fx:id="button_deleteEmployee" minWidth="150" text="Delete" onAction="#onAction_button_deleteEmployee"/>
+        </HBox>
+
+    </GridPane>
+
+    <ProgressIndicator fx:id="progressIndicator" visible="false" maxWidth="150" maxHeight="150"/>
+</StackPane>
